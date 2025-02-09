@@ -1,0 +1,82 @@
+main.cpp:140:5: error: ‘bool SmartLockControl::isLocked() const’ conflicts with a previous declaration
+  140 |     }
+      |     ^
+main.cpp:123:10: note: previous declaration ‘bool SmartLockControl::isLocked’
+  123 |     bool isLocked;
+      |          ^~~~~~~~
+main.cpp:183:5: error: ‘bool GarageDoorControl::isOpen() const’ conflicts with a previous declaration
+  183 |     }
+      |     ^
+main.cpp:166:10: note: previous declaration ‘bool GarageDoorControl::isOpen’
+  166 |     bool isOpen;
+      |          ^~~~~~
+In file included from /usr/include/c++/13/cassert:44,
+                 from main.cpp:2:
+main.cpp: In function ‘void runTests()’:
+main.cpp:233:22: error: ‘bool SmartLockControl::isLocked’ is private within this context
+  233 |     assert(smartLock.isLocked());
+      |                      ^~~~~~~~
+main.cpp:123:10: note: declared private here
+  123 |     bool isLocked;
+      |          ^~~~~~~~
+main.cpp:233:30: error: expression cannot be used as a function
+  233 |     assert(smartLock.isLocked());
+      |            ~~~~~~~~~~~~~~~~~~^~
+main.cpp:236:23: error: ‘bool SmartLockControl::isLocked’ is private within this context
+  236 |     assert(!smartLock.isLocked());
+      |                       ^~~~~~~~
+main.cpp:123:10: note: declared private here
+  123 |     bool isLocked;
+      |          ^~~~~~~~
+main.cpp:236:31: error: expression cannot be used as a function
+  236 |     assert(!smartLock.isLocked());
+      |             ~~~~~~~~~~~~~~~~~~^~
+main.cpp:239:22: error: ‘bool SmartLockControl::isLocked’ is private within this context
+  239 |     assert(smartLock.isLocked());
+      |                      ^~~~~~~~
+main.cpp:123:10: note: declared private here
+  123 |     bool isLocked;
+      |          ^~~~~~~~
+main.cpp:239:30: error: expression cannot be used as a function
+  239 |     assert(smartLock.isLocked());
+      |            ~~~~~~~~~~~~~~~~~~^~
+main.cpp:242:24: error: ‘bool GarageDoorControl::isOpen’ is private within this context
+  242 |     assert(!garageDoor.isOpen());
+      |                        ^~~~~~
+main.cpp:166:10: note: declared private here
+  166 |     bool isOpen;
+      |          ^~~~~~
+main.cpp:242:30: error: expression cannot be used as a function
+  242 |     assert(!garageDoor.isOpen());
+      |             ~~~~~~~~~~~~~~~~~^~
+main.cpp:245:23: error: ‘bool GarageDoorControl::isOpen’ is private within this context
+  245 |     assert(garageDoor.isOpen());
+      |                       ^~~~~~
+main.cpp:166:10: note: declared private here
+  166 |     bool isOpen;
+      |          ^~~~~~
+main.cpp:245:29: error: expression cannot be used as a function
+  245 |     assert(garageDoor.isOpen());
+      |            ~~~~~~~~~~~~~~~~~^~
+main.cpp:248:24: error: ‘bool GarageDoorControl::isOpen’ is private within this context
+  248 |     assert(!garageDoor.isOpen());
+      |                        ^~~~~~
+main.cpp:166:10: note: declared private here
+  166 |     bool isOpen;
+      |          ^~~~~~
+main.cpp:248:30: error: expression cannot be used as a function
+  248 |     assert(!garageDoor.isOpen());
+      |             ~~~~~~~~~~~~~~~~~^~
+main.cpp: In function ‘int main()’:
+main.cpp:261:59: error: structured binding declaration cannot have type ‘std::unique_ptr >’
+  261 |     std::unique_ptr<ElectronicDeviceControl<LightControl>>[] devices = {
+      |                                                           ^~
+main.cpp:261:59: note: type must be cv-qualified ‘auto’ or reference to cv-qualified ‘auto’
+main.cpp:261:59: error: empty structured binding declaration
+main.cpp:261:62: error: expected initializer before ‘devices’
+  261 |     std::unique_ptr<ElectronicDeviceControl<LightControl>>[] devices = {
+      |                                                              ^~~~~~~
+main.cpp:268:25: error: ‘devices’ was not declared in this scope; did you mean ‘device’?
+  268 |     for (auto& device : devices) {
+      |                         ^~~~~~~
+      |                         device
